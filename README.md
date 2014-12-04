@@ -51,7 +51,7 @@ You have requested to uninstall the gem:
         activesupport-4.1.8
 ```
 
-### Problems Second time (2014/10) I encountered when installing
+### Problems First time (2014/10) I encountered when installing
 
  * As I am familiar with,using the dependecy package management tool in ruby `gem`
  * `gem install slideshow` as official said and I expected.
