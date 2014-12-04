@@ -1,0 +1,9 @@
+#####################
+# PastPress Sample Slide Show (S9) template package manifest
+# - modified from impress.js by Bartek Szopka (aka bartaz); see https://github.com/bartaz/impress.js 
+#
+# Change as desired/needed
+#
+# Configured to use the following headers in slides.html.erb:
+
+__file__.html slides.html.erb
