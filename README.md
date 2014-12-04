@@ -2,7 +2,7 @@ PastPress - Slide Show (S9) Template Pack from impress.js
 =========================
 
 This template pack is based on `Slide Show (S9)`, **but the official gem installation seems not very stable**...so I put the installation guide below...  
-This template is modified from `[impress.js](https://github.com/bartaz/impress.js) package by Bartek Szopka (aka bartaz)`, check it out!
+This template is modified from [impress.js](https://github.com/bartaz/impress.js) package by Bartek Szopka (aka bartaz), check it out!
 
 ## Installing slideshow s9
 
@@ -24,11 +24,31 @@ After install `slideshow` by `gem install slideshow`, when I type `slideshow` I 
 /usr/local/Cellar/ruby/2.1.5/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require': cannot load such file -- props/db (LoadError)
 ```
 
-I solve this by 
+I solve this by change to the older version of props:
 
 ```
 gem uninstall props
 gem install props -v 1.1.1
+```
+
+Unfortunately, I got another problem when calling `slideshow`
+
+```
+/usr/local/Cellar/ruby/2.1.5/lib/ruby/2.1.0/rubygems/specification.rb:2064:in `raise_if_conflicts': Unable to activate activerecord-4.1.8, because activesupport-4.2.0.rc1 conflicts with activesupport (= 4
+.1.8) (Gem::LoadError)
+```
+
+I solved this problem by remove one of the activesupport `gem uninstall activesupport`, gem will prompt which to uninstall, I choose older version which works:
+
+```
+Select gem to uninstall:
+ 1. activesupport-4.1.8
+ 2. activesupport-4.2.0.rc1
+ 3. All versions
+> 1
+
+You have requested to uninstall the gem:
+        activesupport-4.1.8
 ```
 
 ### Problems Second time (2014/10) I encountered when installing
