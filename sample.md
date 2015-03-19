@@ -178,16 +178,25 @@ This is inline code: `"Hello world"`
 
 ### Overflowed picture
 
+If you have `slide` class, the picture will be `max-width:100%` and the slide is scrollable
+
 ![Big picture](http://i.imgur.com/S2iMIh8.jpg)
+
+%%%%%%%%%%%%%%% 
+!SLIDE picture x=14200 y=10350 z=10000 scale=2
+
+### Or `picture` class to use one centered picture
+
+![img in picture slide](http://i.imgur.com/S2iMIh8.jpg)
 
 %%%%%%%%%%%%%%% 
 !SLIDE center slide x=16600 y=10350 scale=2
 
-### Small centered picture
+### `center` class to center small picture
 
 ![Small picture](http://i.imgur.com/nP2GIt3.png)
 
-#### this one is `center`
+Use `center` class to center a picture that is not big enough to fill the slide
 
 %%%%%%%%%%%%%%% 
 !SLIDE slide x=19000 y=10350 scale=2 rotate=180
