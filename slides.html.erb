@@ -24,42 +24,96 @@
             right: 0;
             transition: opacity 1s;
 
-            background: white;
-            -webkit-animation: loadingEffect 5s infinite; /* Chrome, Safari, Opera */
-            animation: loadingEffect 5s infinite;
+            background: rgb(21, 21, 21);
         }
         div#loading h1{
             margin: 0;
             padding-top: 80px;
             padding-bottom: 20px;
 
-            background: rgba(182, 215, 213, 1);
+            background: rgb(53, 53, 53);
+            border-bottom: #8ADFFF solid 3px;
+            color: rgb(152, 255, 189);
         }
         div#loading h3{
             margin: 0;
             padding-top: 20px;
             padding-bottom: 20px;
 
-            background: rgba(181, 221, 197, 1)
+            background: rgb(72, 84, 66);
+            color: rgba(255, 179, 94, 1);
         }
         div#loading.done{
             opacity:0;
         }
 
-        /* Chrome, Safari, Opera */
-        @-webkit-keyframes loadingEffect {
-            0%   {background: rgba(215, 172, 172, 1);}
-            25%  {background: rgba(206, 215, 172, 1);}
-            50%  {background: rgba(172, 215, 206, 1);}
-            100% {background: rgba(215, 172, 172, 1);}
+        div#loading .spinner {
+            -webkit-animation: rotation 1.4s linear infinite;
+            animation: rotation 1.4s linear infinite;
+            stroke: rgba(0, 149, 207, 1);
+            margin-left: auto;
+            display: block;
+            margin-right: auto;
+            margin-top: 10%;
         }
-
-        /* Standard syntax */
-        @keyframes loadingEffect {
-            0%   {background: rgba(215, 172, 172, 1);}
-            25%  {background: rgba(206, 215, 172, 1);}
-            50%  {background: rgba(172, 215, 206, 1);}
-            100% {background: rgba(215, 172, 172, 1);}
+        @-webkit-keyframes rotation {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(270deg);
+                transform: rotate(270deg);
+            }
+        }
+        @keyframes rotation {
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(270deg);
+                transform: rotate(270deg);
+            }
+        }
+        div#loading .spinner .circle {
+            stroke-dasharray: 187;
+            stroke-dashoffset: 0;
+            -webkit-transform-origin: center;
+            -ms-transform-origin: center;
+            transform-origin: center;
+            -webkit-animation: turn 1.4s ease-in-out infinite;
+            animation: turn 1.4s ease-in-out infinite;
+        }
+        @-webkit-keyframes turn {
+            0% {
+                stroke-dashoffset: 187;
+            }
+            50% {
+                stroke-dashoffset: 46.75;
+                -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
+            }
+            100% {
+                stroke-dashoffset: 187;
+                -webkit-transform: rotate(450deg);
+                transform: rotate(450deg);
+            }
+        }
+        @keyframes turn {
+            0% {
+                stroke-dashoffset: 187;
+            }
+            50% {
+                stroke-dashoffset: 46.75;
+                -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
+            }
+            100% {
+                stroke-dashoffset: 187;
+                -webkit-transform: rotate(450deg);
+                transform: rotate(450deg);
+            }
         }
 
         /*the background*/
@@ -79,12 +133,12 @@
 
         /*normal step*/
         .step {
-          color:rgba(124, 177, 143, 1);
+          color:rgb(152, 255, 189);
           width: 1024px;
           height: 576px;
           padding: 40px 60px;
 
-          font-size: 30px;
+          font-size: 32px;
 
           opacity: 0.9;
           line-height: 1.6;
@@ -99,36 +153,11 @@
 
         .step.active {
           opacity: 1;
-          text-shadow: 0px 0px 20px rgba(0, 38, 104, 1);
+          text-shadow: 0px 0px 20px black;
         }
 
         .step.present {
             z-index: 100;
-        }
-
-        /*slide step*/
-        .slide {
-          background: black;
-          border-radius: 10px;
-          overflow: auto;
-        }
-
-        .step.unclickable {
-            pointer-events:none;
-        }
-
-        .step.center p {
-            text-align: center;
-        }
-
-        .step.showOnlyWhenPresent {
-            opacity: 0;
-            pointer-events:none;
-        }
-
-        .step.showOnlyWhenPresent.present {
-            opacity: 1;
-            pointer-events:default;
         }
 
         /*markdown elements*/
@@ -156,6 +185,7 @@
             background-color: rgba(56, 186, 112, 0.82);
             color: #D1CABC;
             border-radius: 10px;
+            padding: 7px;
             font-family: "Consolas","Montserrat",sans-serif;
         }
 
@@ -188,7 +218,7 @@
         }
 
         strong {
-            color: rgba(134, 109, 81, 1);
+            color: rgba(255, 179, 94, 1);
         }
 
         /*controls*/
@@ -234,13 +264,48 @@
             cursor: pointer;
         }
 
-        /*picture slide*/
-        .picture img{
+        /* customization options of steps*/
+
+        .slide {
+            background: #383838;
+            border: black solid 1px;
+            border-radius: 10px;
+            overflow: auto;
+        }
+        .slide.active {
+            box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 10px;
+        }
+
+        .step.unclickable {
+            pointer-events:none;
+        }
+
+        .step.center p {
+            text-align: center;
+        }
+
+        .step.showOnlyWhenPresent {
+            opacity: 0;
+            pointer-events:none;
+        }
+
+        .step.showOnlyWhenPresent.present {
+            opacity: 1;
+            pointer-events:default;
+        }
+
+        .step.picture img{
             max-height: 400px;
             margin-left: auto;
             margin-right: auto;
             display: block;
         }
+
+        .step.slogen h2{
+            margin-top: 15%;
+            font-size: 1.9em;
+        }
+
         <%= content_for :css %>
     </style>
 </head>
@@ -261,8 +326,7 @@
 <div id="loading">
     <h1><%= @headers['title'] %></h1>
     <h3><%= @headers['author']%></h3>
-    <div id="circleG">
-    </div>
+    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><circle class="circle" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg>
 </div>
 
 <div class="controls">

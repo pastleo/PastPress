@@ -129,7 +129,7 @@ author: PastLeo
 
 #### h4 for sub text of the big
 
-%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%
 !SLIDE slide x=11200 y=10000 scale=1
 
 ### h3 for the detailed
@@ -139,7 +139,7 @@ Because it will become a new slide
 Use `!SLIDE` directive for this template  
 More info? see [here](http://slideshow-s9.github.io/more.html)
 
-%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%
 !SLIDE slide x=12400 y=10000 scale=1
 
 ### Codes
@@ -152,7 +152,7 @@ this_line_is_too_short_to_fit_in_one_line(the_first_real_long_arg,the_second_rea
 
 This is inline code: `"Hello world"`
 
-%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%
 !SLIDE slide x=12400 y=10700 scale=1
 
 ### Lists
@@ -162,7 +162,7 @@ This is inline code: `"Hello world"`
     - sub item 1
     - sub item 2
 
-%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%
 !SLIDE slide x=12400 y=11400 scale=1
 
 ### Indented Text
@@ -173,7 +173,7 @@ This is inline code: `"Hello world"`
 
 >>> even more more indented
 
-%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%
 !SLIDE slide x=14200 y=10350 scale=2
 
 ### Overflowed picture
@@ -182,14 +182,14 @@ If you have `slide` class, the picture will be `max-width:100%` and the slide is
 
 ![Big picture](http://i.imgur.com/S2iMIh8.jpg)
 
-%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%
 !SLIDE picture x=14200 y=10350 z=10000 scale=2
 
 ### Or `picture` class to use one centered picture
 
 ![img in picture slide](http://i.imgur.com/S2iMIh8.jpg)
 
-%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%
 !SLIDE center slide x=16600 y=10350 scale=2
 
 ### `center` class to center small picture
@@ -198,7 +198,7 @@ If you have `slide` class, the picture will be `max-width:100%` and the slide is
 
 Use `center` class to center a picture that is not big enough to fill the slide
 
-%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%
 !SLIDE slide x=19000 y=10350 scale=2 rotate=180
 
 ### And Links of course
